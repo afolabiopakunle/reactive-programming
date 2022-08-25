@@ -36,6 +36,7 @@ export class PostsComponent implements OnInit, OnDestroy {
     this.postObserver = this.postService.fetchDocs()
       .pipe(map(posts => {
         let postData: IPost[] = [];
+        console.log(posts)
         for(let id in posts) {
           postData.push({...posts[id], id})
         }
